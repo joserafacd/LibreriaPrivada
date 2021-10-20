@@ -1,0 +1,3 @@
+rootProject.name = "LibreriaPrivada"
+include ':app'
+include ':calculadoraprivada'
