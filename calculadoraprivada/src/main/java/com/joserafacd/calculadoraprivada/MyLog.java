@@ -6,4 +6,8 @@ public class MyLog {
     public static void d(String TAG, String message){
         Log.d(TAG, message);
     }
+
+    public static void v(String message){
+        Log.v("Prueba",message);
+    }
 }
