@@ -6,6 +6,8 @@ import android.content.pm.PackageManager;
 import android.util.Log;
 
 public class MyLog {
+
+
     public static void d(String TAG, String message){
         Log.d(TAG, message);
     }
@@ -18,11 +20,12 @@ public class MyLog {
         Log.i("Hola", message);
     }
 
-    public static String versionName(Context context){
+    public String versionName(Context context){
+
         PackageManager manager = context.getPackageManager();
         PackageInfo info = null;
         try {
-            info = manager.getPackageInfo(context.getPackageName(), PackageManager.GET_ACTIVITIES);
+            info = manager.getPackageInfo("com.joserafacd.libreriaprivada", PackageManager.GET_ACTIVITIES);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
             Log.d("versionName","error");
