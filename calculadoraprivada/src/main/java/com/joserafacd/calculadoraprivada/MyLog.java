@@ -1,5 +1,7 @@
 package com.joserafacd.calculadoraprivada;
 
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.util.Log;
 
 public class MyLog {
@@ -13,5 +15,16 @@ public class MyLog {
 
     public static void i(String message){
         Log.i("Hola", message);
+    }
+
+    public static String versionName(Context context){
+        String versionName = null;
+        try {
+            versionName = context.getPackageManager().getPackageInfo("com.joserafacd.libreriaprivada", 0).versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            return "undefined";
+        }
+        return versionName;
     }
 }
